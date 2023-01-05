@@ -1,0 +1,21 @@
+.booksContainer div {
+    background-color: green;
+    width: 100px;
+    height: 100px;
+    border: 2px solid black;
+}
+
+.booksContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+}
+
+.addNewBookForm {
+    display: block;
+    visibility: visible;
+}
+
+button {
+    cursor: pointer;
+}
