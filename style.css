@@ -1,21 +1,183 @@
-.booksContainer div {
-    background-color: green;
-    width: 100px;
-    height: 100px;
-    border: 2px solid black;
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+:root {
+    --body_bg: red;
+    --header_bg: rgba(220, 220, 220, 0.4);
+    --book_bg: #DCDCDC;
+    --checked: green;
+    --bookDelete_bg: red;
+    --form_bg: rgba(220, 220, 220, 0.8);
+    --addBook_bg: #DCDCDC;
+    --addBook_hover: #C5C5C5;
+    --newBook_bg: #DCDCDC;
+    --newBook_hover: #C5C5C5;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+}
+
+.mainConteiner{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.titleContainer {
+    display: flex;
+    top: 0%;
+    padding: 1rem;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--header_bg);
+    box-shadow: 0px 0px 20px rgba(0,0,0,0.8);
+    position: absolute;
+}
+
+.titleContainer h1 {
+    position: relative;
+    font-size: 3rem;
+    z-index: 90;
+    margin-right: 2rem;
+    letter-spacing: 0.1rem;
+}
+
+.titleContainer i {
+    margin-right: 2rem;
 }
 
 .booksContainer {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 20px;
 }
 
-.addNewBookForm {
+.booksContainer div {
+    display: flex;
+    background-color: var(--book_bg);
+    width: 14em;
+    height: 18rem;
+    border: 1px solid black;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-radius: 0.4rem;
+    padding-top: 1rem;
+}
+
+.booksContainer div * {
+    margin-bottom: 1.8rem;
+}
+
+.booksContainer div p {
+    font-size: 1.2rem;
+}
+
+.booksContainer div button {
+    width: 10rem;
+    padding: 0.6rem;
+    font-size: 1rem;
+    transition: background-color 0.2s ease-in;
+}
+
+.deleteBtn:hover {
+    background-color: var(--bookDelete_bg);
+}
+
+.formConteiner {
+    background-color: var(--form_bg);
+    border: 2px solid black;
+    border-radius: 0.2rem;
+    position: absolute;
+    width: 15rem;
+    height: 22rem;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 69;
+    display: none;
+    opacity: 100%;
+    transition: opacity .2s ease-in-out;
+}
+
+.formConteiner.show {
     display: block;
-    visibility: visible;
+    opacity: 0%;
 }
 
-button {
+.formConteiner label {
+    font-size: 1.5rem;
+    position: relative;
+}
+
+.formConteiner input:not([type=checkbox]){
+    position: relative;
+    height: 2rem;
+    margin-bottom: 1rem;   
+}
+
+.formConteiner .submitNewBook {
+    position: relative;
+    width: 8rem;
+    padding: 0.6rem;
+    display: block;
+    left: 15%;
+    margin-top: 1rem;
+    text-align: center;
+    background-color: var(--addBook_bg);
+    
+}
+
+.submitNewBook:hover {
+    background-color: var(--addBook_hover);
+}
+
+button, input[type=checkbox] {
     cursor: pointer;
+    border-radius: 0.4rem;
+    border: none;
+    transition: background-color .2s ease-in;
+    accent-color: var(--checked);
+}
+
+.newBookContainer {
+    position: absolute;
+    bottom: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.newBook {
+    text-align: center;
+    position: relative;
+    width: 15rem;
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: bolder;
+    background-color: var(--newBook_bg);
+    transition: background-color 0.2s ease-in;
+} 
+
+.newBook i {
+    margin-right: 0.2rem;
+}
+
+.newBook:hover {
+    background-color: var(--newBook_hover);
 }

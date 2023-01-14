@@ -6,24 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css"></link>
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <script src="https://kit.fontawesome.com/1f14f7b4ab.js" crossorigin="anonymous"></script>
     <script src="./app.js" defer></script>
     <title>Library</title>
 </head>
 <body>
-    <div class="booksContainer">
+    <div class="mainConteiner">
+        <div class="titleContainer">
+            <i class="fa-solid fa-book fa-3x"></i><h1>Library</h1>
+        </div>
+        <div class="booksContainer"></div>
+        <div class="formConteiner">
+            <form id="form" class="addNewBookForm" action="./app.js">
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title" required></input>
+                <label for="author">Author:</label>
+                <input type="text" id="author" name="author" required></input>
+                <label for="pages">Pages:</label>
+                <input type="number" id="pages" name="pages" required></input>
+                <label for="read">Read?</label>
+                <input type="checkbox" id="read" name="read" required></input>
+                
+                <div class="submitNewBookConteiner">
+                    <button class="submitNewBook">Add Book</button>
+                </div>
+                
+            </form>
+        </div>
+        <div class="newBookContainer">
+            <button class="newBook"><i class="fa-solid fa-plus fa-1x"></i> New Book</button>
+        </div>  
     </div>
-    <form class="addNewBookForm" action="#">
-        <label for="title"></label>
-        <input type="text" id="title" name="title">Title</input>
-        <label for="author"></label>
-        <input type="text" id="author" name="author">Author</input>
-        <label for="pages"></label>
-        <input type="number" id="pages" name="pages">Pages</input>
-        <label for="read"></label>
-        <input type="checkbox" id="read" name="read">Read?</input>
-
-        <button class="submitNewBook">Add Book</button>
-    </form>
-    <button class="newBook">New Book</button>
 </body>
 </html>
